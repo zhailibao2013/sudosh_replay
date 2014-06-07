@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/static/style/styles.css">
+        <link rel="stylesheet" type="text/css" href="/static/style//bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css">
+        <title>{% include "_blog_name.html" %} -- e e
+g!</title>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="header"><a href='/'><h1><b>{% include "_blog_name.html" %}</b></h1></a></div>
+<div id="line"></div>
+    <div class="row">
+    <div class="span6">
+        <ul class="nav nav-tabs">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        {% if g.user.is_authenticated() %}
+        <li> <a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+        </ul>
+    </div>
+    </div>
+    </div>
+
+<div id="main">
+{% for message in get_flashed_messages() %}
+  <div class=flash>{{ message }}</div>
+{% endfor %}
+{% block main %}
+{% endblock %}
+
+</div> <!-- end main -->
+
+<div id="footer">
+<p>Copyright (c) 2014 <a href="">sudopy-replay project</a> by <a href="mailto:zhailibao@gmail.com">zhailibao</a>. Powered by <a href="http://flask.pocoo.org" style="border: none"><img src="/static/img/flask-logo.png" alt="Flask"></a></p>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.flash').fadeOut(3000);
+        $('#datetimepicker4').datetimepicker({
+      pickTime: false
+    });
+    });
+    
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/static/js/jquery-1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="/static/style/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>-->
+    <script src="/static/style/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

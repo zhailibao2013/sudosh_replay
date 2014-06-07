@@ -1,0 +1,23 @@
+Metadata-Version: 1.0
+Name: sudosh-replay
+Version: 0.0.2
+Summary: sudosh web replay
+Home-page: UNKNOWN
+Author: zhailibao
+Author-email: zhailibao2013@aliyun.com
+License: MIT License
+Description: UNKNOWN
+Keywords: sudosh,sudosh2,flask,TermRecord
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: Terminals

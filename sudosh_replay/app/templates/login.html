@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block main %}
+
+
+</h1>
+<div class="error">
+    {% if form.errors %}
+        {% for error in form.errors %}
+             Input Error: {{error}} </br>
+        {% endfor %}
+    {% endif %}
+</div>
+<form action="" class="form-horizontal" method=post>
+    {{ form.csrf_token }}
+    <fieldset>
+      <div class="control-group">
+      <label class="control-label">{{ form.username.label }}</label>
+      {{ form.username }}
+      </div>
+      <div class="control-group">
+      <label class="control-label">{{ form.password.label }}</label>
+      {{ form.password }}
+      </div>
+      <div class="control-group">
+      <label class="control-label">Remember me </label>
+      {{form.remember_me}}
+      </div>
+      <div class="control-group">
+      <label class="control-label"></label>
+      {{ form.submit }}
+      </div>
+    <fieldset>
+</form>
+
+<p></p>
+{% endblock %}

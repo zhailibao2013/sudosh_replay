@@ -1,0 +1,52 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Hi</h1>
+      <div class="row">
+        <div class="span12">
+		<form action = "/search" method="post" class="well form-search">
+                        {{ form.csrf_token }}
+  			<input name="filter" type="text" class="input-medium search-query">
+  			<button type="submit" class="btn"><i class="icon-search"></i> Search</button>
+		</form>
+		</div>
+		</div>
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>From</th>
+            <th>To</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+{% for sudo in sudos.getSudos() %}
+    <tr>
+    <td>{{sudo.getDate()}}</td>
+    <td>{{sudo.getDuration()}}</td>
+    <td>{{sudo.getFrom()}}</td>
+    <td>{{sudo.getTo()}}</td>
+    <td><a href='/id/{{sudo.getID()}}'>{{sudo.getID()}}</a></td>
+    </tr>
+{% endfor %}
+</table>
+<ul class="pager">
+<li>
+{% if sudos.has_prev %}
+    <a href="{{url_for('index',page=sudos.prev_num)}}"> Newer</a>
+{% else %}
+     <a href="#">Newer</a>
+{% endif %}
+</li>
+||
+<li>
+{% if sudos.has_next %}
+    <a href="{{url_for('index',page=sudos.next_num)}}"> Older</a>
+{% else %}
+     <a href="#">Older</a>
+{% endif %}
+</li>
+{% endblock %}
